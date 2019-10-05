@@ -10,33 +10,33 @@ output:
       collapsed: false
 ---
 
-#Introduction
-Justification for experiment
+# Introduction
+## Justification for experiment
 This study examines structural brain changes in young adult cannabis users in a longitudinal design. This study is pertinent to my research interests because I will be studying structural-functional relationships in adolescent brain development using similar neuroimaging methods. It will be beneficial to have experience with this structural processing pipeline and with SPM software.
 
-Description of paper
-The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study included young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage. 
+## Description of paper
+The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study were young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage. 
 
-I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline.
+I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline and two-sample t-tests.
 
-Description of stimuli and procedures
+## Description of stimuli and procedures
 I will be using the following:
 Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
 https://openneuro.org/datasets/ds000174/versions/1.0.1
 SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
 
-VBM Procedure Overview:
+## VBM Procedure Overview:
 
 1. Normalization
 2. Segmentation of T1w data into grey matter, white matter, and CSF
 3. Smoothing of voxels
 4. Statistical analysis
 
-Anticipated Challenges
+## Anticipated Challenges
 - Reproducing the VBM pipeline steps when explicit parameter values are not listed
 - Design matrix setup
 
-Links
+## Links
 Project Repository: https://github.com/psych251/koenders2016
 
 Original Paper: https://github.com/psych251/koenders2016/tree/master/original_paper
