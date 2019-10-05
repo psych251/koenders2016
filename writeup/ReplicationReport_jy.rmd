@@ -1,5 +1,5 @@
 ---
-title: "Replication of Koenders et al., 2016 via OpenNeuro Public Dataset (2016, Psychological Science)"
+title: "Replication of Koenders et al., 2016 via OpenNeuro Public Dataset (2016, PLOS One)"
 author: "Justin Yuan (yuanjp@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
