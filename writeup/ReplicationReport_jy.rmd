@@ -25,12 +25,21 @@ Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
 https://openneuro.org/datasets/ds000174/versions/1.0.1
 SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
 
-VBM Overview:
-  1.	Normalization
-  2.	Segmentation into grey matter, white matter, and CSF
-  3.	Smoothing
-  4.	Statistical analysis
+VBM Procedure Overview:
 
+1. Normalization
+2. Segmentation of T1w data into grey matter, white matter, and CSF
+3. Smoothing of voxels
+4. Statistical analysis
+
+Anticipated Challenges
+- Reproducing the VBM pipeline steps when explicit parameter values are not listed
+- Design matrix setup
+
+Links
+Project Repository: https://github.com/psych251/koenders2016
+
+Original Paper: https://github.com/psych251/koenders2016/tree/master/original_paper
 
 ##Methods
 
