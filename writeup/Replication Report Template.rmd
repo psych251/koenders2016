@@ -10,9 +10,7 @@ output:
       collapsed: false
 ---
 
-<!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
-
-##Introduction
+#Introduction
 Justification for experiment
 This study examines structural brain changes in young adult cannabis users in a longitudinal design. This study is pertinent to my research interests because I will be studying structural-functional relationships in adolescent brain development using similar neuroimaging methods. It will be beneficial to have experience with this structural processing pipeline and with SPM software.
 
@@ -23,15 +21,15 @@ I aim to replicate the study’s finding of significant cerebellar differences b
 
 Description of stimuli and procedures
 I will be using the following:
-•	Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
-o	https://openneuro.org/datasets/ds000174/versions/1.0.1
-•	SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
+Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
+https://openneuro.org/datasets/ds000174/versions/1.0.1
+SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
 
 VBM Overview:
-1.	Normalization
-2.	Segmentation into grey matter, white matter, and CSF
-3.	Smoothing
-4.	Statistical analysis
+  1.	Normalization
+  2.	Segmentation into grey matter, white matter, and CSF
+  3.	Smoothing
+  4.	Statistical analysis
 
 
 ##Methods
