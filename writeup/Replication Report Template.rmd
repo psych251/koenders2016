@@ -1,6 +1,6 @@
 ---
-title: "Replication of Koenders et al., 2016 by OpenNeuro (200x, Psychological Science)"
-author: "Replication Author[s] (contact information)"
+title: "Replication of Koenders et al., 2016 by OpenNeuro Public Dataset (2016, Psychological Science)"
+author: "Justin Yuan (yuanjp@stanford.edu)"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
   html_document:
@@ -13,9 +13,25 @@ output:
 <!-- Replication reports should all use this template to standardize reporting across projects.  These reports will be public supplementary materials that accompany the summary report(s) of the aggregate results. -->
 
 ##Introduction
-Justification for experiment: This study examines structural brain changes in young adult cannabis users in a longitudinal design. This paper is related to my research interests and plans because a large component of my research will revolve around longitudinal analysis of adolescent brain data and factors influencing development.
+Justification for experiment
+This study examines structural brain changes in young adult cannabis users in a longitudinal design. This study is pertinent to my research interests because I will be studying structural-functional relationships in adolescent brain development using similar neuroimaging methods. It will be beneficial to have experience with this structural processing pipeline and with SPM software.
 
-[No abstract is needed.]  Each replication project will have a straightforward, no frills report of the study and results.  These reports will be publicly available as supplementary material for the aggregate report(s) of the project as a whole.  Also, to maximize project integrity, the intro and methods will be written and critiqued in advance of data collection.  Introductions can be just 1-2 paragraphs clarifying the main idea of the original study, the target finding for replication, and any other essential information.  It will NOT have a literature review -- that is in the original publication. You can write both the introduction and the methods in past tense.  
+Description of paper
+The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study included young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage. 
+
+I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline.
+
+Description of stimuli and procedures
+I will be using the following:
+•	Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
+o	https://openneuro.org/datasets/ds000174/versions/1.0.1
+•	SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
+
+VBM Overview:
+1.	Normalization
+2.	Segmentation into grey matter, white matter, and CSF
+3.	Smoothing
+4.	Statistical analysis
 
 
 ##Methods
