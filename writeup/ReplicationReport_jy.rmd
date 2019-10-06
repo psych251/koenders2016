@@ -20,10 +20,7 @@ The study by Koenders et al. examined whether structural brain changes were asso
 I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline and two-sample t-tests.
 
 ## Description of stimuli and procedures
-I will be using the following:
-Subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro.com
-https://openneuro.org/datasets/ds000174/versions/1.0.1
-SPM8 software to conduct voxel-based morphometry analysis (using VBM8 of SPM)
+I will be using the subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro. (https://openneuro.org/datasets/ds000174/versions/1.0.1). SPM8 software will be used to conduct voxel-based morphometry analysis (using VBM8 of SPM).
 
 ## VBM Procedure Overview:
 
