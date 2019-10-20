@@ -12,7 +12,7 @@
 
 <meta name="author" content="Justin Yuan (yuanjp@stanford.edu)" />
 
-<meta name="date" content="2019-10-05" />
+<meta name="date" content="2019-10-20" />
 
 <title>Replication of Koenders et al., 2016 via OpenNeuro Public Dataset (2016, PLOS One)</title>
 
@@ -1512,7 +1512,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Replication of Koenders et al., 2016 via OpenNeuro Public Dataset (2016, PLOS One)</h1>
 <h4 class="author">Justin Yuan (<a href="mailto:yuanjp@stanford.edu" class="email">yuanjp@stanford.edu</a>)</h4>
-<h4 class="date">October 05, 2019</h4>
+<h4 class="date">October 20, 2019</h4>
 
 </div>
 
@@ -1525,7 +1525,7 @@ div.tocify {
 </div>
 <div id="description-of-paper" class="section level2">
 <h2>Description of paper</h2>
-<p>The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study were young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage.</p>
+<p>The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study were young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume (GMV) changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage.</p>
 <p>I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline and two-sample t-tests.</p>
 </div>
 <div id="description-of-stimuli-and-procedures" class="section level2">
@@ -1545,27 +1545,54 @@ div.tocify {
 <h2>Anticipated Challenges</h2>
 <ul>
 <li>Reproducing the VBM pipeline steps when explicit parameter values are not listed</li>
-<li>Design matrix setup</li>
+<li>Possible software incompatability with SPM8</li>
+<li>May need to use SPM12 instead of SPM8</li>
 </ul>
 </div>
 <div id="links" class="section level2">
 <h2>Links</h2>
 <p>Project Repository: <a href="https://github.com/psych251/koenders2016" class="uri">https://github.com/psych251/koenders2016</a></p>
 <p>Original Paper: <a href="https://github.com/psych251/koenders2016/tree/master/original_paper" class="uri">https://github.com/psych251/koenders2016/tree/master/original_paper</a></p>
-<p>##Methods</p>
-<p>###Power Analysis</p>
-<p>Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.</p>
-<p>###Planned Sample</p>
-<p>Planned sample size and/or termination rule, sampling frame, known demographics if any, preselection rules if any.</p>
-<p>###Materials</p>
-<p>All materials - can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
-<p>###Procedure</p>
-<p>Can quote directly from original article - just put the text in quotations and note that this was followed precisely. Or, quote directly and just point out exceptions to what was described in the original article.</p>
-<p>###Analysis Plan</p>
-<p>Can also quote directly, though it is less often spelled out effectively for an analysis strategy section. The key is to report an analysis strategy that is as close to the original - data cleaning rules, data exclusion rules, covariates, etc. - as possible.</p>
-<p><strong>Clarify key analysis of interest here</strong> You can also pre-specify additional analyses you plan to do.</p>
-<p>###Differences from Original Study</p>
-<p>Explicitly describe known differences in sample, setting, procedure, and analysis plan from original study. The goal, of course, is to minimize those differences, but differences will inevitably occur. Also, note whether such differences are anticipated to make a difference based on claims in the original article or subsequent published research on the conditions for obtaining the effect.</p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<div id="power-analysis" class="section level3">
+<h3>Power Analysis</h3>
+<p><em>Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size. Considerations of feasibility for selecting planned sample size.</em></p>
+</div>
+<div id="planned-sample" class="section level3">
+<h3>Planned Sample</h3>
+<p>The sample for this pipeline reproduction consists of heavy cannabis users (CB,n=20, age baseline M=20.5, SD=2.1) and non-cannabis using healthy controls (HC,n=22 age baseline M=21.6, SD=2.45). T1-weighted MRI data comes from OpenNeuro.org.</p>
+</div>
+<div id="materials" class="section level3">
+<h3>Materials</h3>
+<p>The materials required for this VBM pipeline reproduction are 1) the MRI dataset and 2) neuroimaging processing software. Both are available online and summarized below:</p>
+<ol style="list-style-type: decimal">
+<li><p>MRI dataset - 3T structural MRI scans were downloaded from OpenNeuro with the parameters as follows: T1 turbo field echo, TR 9.6 s, TE 4.6 s, 182 slices, slice thickness 1.2 mm, FOV 256x256 mm, in-plane resolution 256x256mm, flip angle 8°. See Links section for OpenNeuro source.</p></li>
+<li><p>SPM software - the pipeline will be run in SPM8 (Structural Brain Mapping Group), specifically employing the VBM-8 module. SPM requires Matlab.</p></li>
+</ol>
+<p><strong>Replication study differences:</strong> Dependent on software compatability, SPM12 may be used instead of SPM8.</p>
+</div>
+<div id="procedure" class="section level3">
+<h3>Procedure</h3>
+<p><strong>Voxel-based morphometry</strong><br />
+<em>Quoted from study:</em> “For both the cross-sectional and the longitudinal analyses, we used the VBM-8 module of the software package SPM (Structural Brain Mapping Group, University of Jena, Germany, <a href="http://dbm.neuro.uni-jena.de/vbm8" class="uri">http://dbm.neuro.uni-jena.de/vbm8</a>). For the cross-sectional analyses, at baseline and followup, individual T1 images were first aligned to a T1 template in MNI-space (Montreal Neurological Institute) and subsequently segmented into grey matter, white matter and cerebro- spinal fluid. The resulting grey matter was normalized using the diffeomorphic image registration algorithm (DARTEL) [33]. Grey matter images were modulated with the nonlinear transformation parameters as computed during the normalization procedures. The resulting images contain the volume proportion of probabilistically assigned grey matter tissue for each voxel. These grey matter tissue probability images were visually inspected again and finally smoothed with an 8-mm Gaussian kernel. Note that each image of the regional grey matter volume was corrected for individual brain size, since this step is part of the VBM8 toolbox routine.”</p>
+<p><strong>ROIs</strong><br />
+The study examined specific regions of interest (ROIs) that were based on previous cross-sectional findings. They were anatomically defined using the Nielsen and Hansen’s volume of interest online database. The ROIs were the: OFC, ACC, insula, striatum, thalamus, amygdala, hippocampus and cerebellum</p>
+<p><strong>Replication Study Differences:</strong><br />
+SPM12 may be used for the VBM processing pipeline instead of SPM8 due to possible incompatabilities of the older SPM8 / VBM-8 module and the current version of Matlab 2019a. If SPM12 is employed, the CAT12 VBM module will be used instead of VBM-8.</p>
+<p>This replication will focus on the cerebellum ROI as it was the primary baseline finding.</p>
+</div>
+<div id="analysis-of-vbm-data" class="section level3">
+<h3>Analysis of VBM Data</h3>
+<p>The key analysis of interest is a two-sample t-test of the grey matter volumes at baseline between the cannabis users group and the healthy control group. The result of interest is a significant difference of GMV located at the cerebellum between users and controls.</p>
+<p>In addition to the two-sample t-test, I will check the cerebellar ROI’s grey matter volumes for normality.</p>
+<p>Significance was defined as follows: &quot;For all analyses, we first performed region of interest ROI analyses, where structural differences within ROI masks were considered significant if p &lt; .001, with an FWE-corrected cluster probability of p &lt; .05 adjusted for the small search volume [36].</p>
+</div>
+<div id="differences-from-original-study" class="section level3">
+<h3>Differences from Original Study</h3>
+<p>The main difference between this pipeline reproduction and the original study is the possible usage of SPM12. This possibility is not likely as it should be straightforward to resolve incompatabilities by using an older version of Matlab (e.g. one released around SPM8 like R2014b).</p>
+</div>
 <div id="methods-addendum-post-data-collection" class="section level3">
 <h3>Methods Addendum (Post Data Collection)</h3>
 <p>You can comment this section out prior to final report with data collection.</p>
@@ -1576,9 +1603,11 @@ div.tocify {
 <div id="differences-from-pre-data-collection-methods-plan" class="section level4">
 <h4>Differences from pre-data collection methods plan</h4>
 <p>Any differences from what was described as the original plan, or “none”.</p>
-<p>##Results</p>
 </div>
 </div>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
 <div id="data-preparation" class="section level3">
 <h3>Data preparation</h3>
 <p>Data preparation following the analysis plan.</p>
