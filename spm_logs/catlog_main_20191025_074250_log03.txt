@@ -1,0 +1,894 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                   R2019b (9.7.0.1190202) 64-bit (maci64)
+                              August 21, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+CAT parallel processing with MATLAB PID: 1652
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 1/8:       ./Desktop/workspace/t1s/sub-104_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            95s
+Internal resampling (0.88x0.88x1.20mm > 1.00x1.00x1.00mm):            8s
+APP: Rough bias correction:                                       
+  Initialize                                                         25s
+  Estimate background                                                17s
+  Initial correction                                                 17s
+  Refine background                                                   9s
+  Final correction                                                   12s
+  Final scaling                                                      15s
+                                                                    105s
+Affine registration                                                  33s
+Affine registration                                                  26s
+SPM preprocessing 1 (estimate 1):                                   245s
+SPM preprocessing 1 (estimate 2):                                   152s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 43s
+  Update Segmentation                                               103s
+  Update Skull-Stripping                                            100s
+  Update probability maps                                            19s
+                                                                    264s
+Global intensity correction:                                         43s
+SANLM denoising after intensity normalization (medium):              29s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1215 |   386958        0   386958  297.203 
+    2 | 0.1081 |   344319     6451   350770  183.278 
+    3 | 0.1019 |   324392     9317   333709  153.715 
+    4 | 0.0952 |   303249    11921   315170  143.177 
+    5 | 0.0874 |   278292    13881   292174  121.113 
+    6 | 0.0800 |   254692    27661   282353   64.236 
+
+                                                                    209s
+  225s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                        8s
+  Prepare partitions                                                  3s
+  Prepare segments (LASmod = 1.02)                                   31s
+  Estimate local tissue thresholds (WM)                              38s
+  Estimate local tissue thresholds (GM)                              46s
+  Estimate local tissue thresholds (CSF/BG)                          10s
+  Intensity transformation                                          142s
+  SANLM denoising after LAS (medium)                                 66s
+                                                                     66s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             23s
+  Major structures                                                    7s
+  Ventricle detection                                                30s
+  Blood vessel detection                                             21s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.00)                       44s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          3s
+  Side alignment                                                      8s
+  Final corrections                                                  10s
+                                                                    147s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   34s
+    AMAP peaks: [CSF,GM,WM] = [0.42±0.06,0.68±0.10,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    7s
+  Level 1 cleanup (brain masking)                                     3s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        3s
+                                                                     14s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1342 |   427445        0   427445  328.847 
+    2 | 0.1172 |   373316    16827   390143  114.872 
+    3 | 0.1162 |   370084    17103   387187   37.778 
+    4 | 0.1163 |   370235     8972   379207  176.218 
+    5 | 0.1085 |   345469    25181   370650   57.078 
+    6 | 0.1083 |   344780    25221   370001   35.357 
+    7 | 0.1090 |   347241    13107   360347  156.151 
+    8 | 0.1001 |   318630    31652   350282   59.015 
+    9 | 0.0998 |   317707    31455   349162   35.697 
+   10 | 0.1004 |   319669    16542   336211  141.264 
+   11 | 0.0908 |   289139    35859   324998   56.780 
+   12 | 0.0903 |   287511    35897   323409   35.802 
+   13 | 0.0908 |   289021    18990   308012  116.232 
+   14 | 0.0824 |   262430    35243   297674   51.290 
+   15 | 0.0816 |   259741    36250   295991   34.431 
+   16 | 0.0812 |   258507    38243   296750   41.132 
+   17 | 0.0808 |   257342    38476   295818   30.237 
+   18 | 0.0804 |   256169    39352   295521   27.331 
+                                                                    507s
+  Jacobian determinant (RMS):  0.107212 
+           Template Matching:  0.080444 
+Write result maps:                                                   60s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             27s
+  ROI estimation of 'neuromorphometrics' atlas                       14s
+                                                                     41s
+Quality check:                                                       33s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-104_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 40 minute(s) and 7 second(s).
+Image Quality Rating (IQR):  84.42% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 2/8:       ./Desktop/workspace/t1s/sub-117_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            72s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            5s
+APP: Rough bias correction:                                       
+  Initialize                                                         14s
+  Estimate background                                                15s
+  Initial correction                                                 20s
+  Refine background                                                  18s
+  Final correction                                                   24s
+  Final scaling                                                      18s
+                                                                    121s
+Affine registration                                                  64s
+Affine registration                                                  38s
+SPM preprocessing 1 (estimate 1):                                   204s
+SPM preprocessing 1 (estimate 2):                                   150s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 45s
+  Update Segmentation                                               102s
+  Update Skull-Stripping                                            102s
+  Update probability maps                                            19s
+                                                                    268s
+Global intensity correction:                                         39s
+SANLM denoising after intensity normalization (medium):              44s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1240 |   394983        0   394983  310.003 
+    2 | 0.1099 |   349837     6802   356639  185.904 
+    3 | 0.1029 |   327815     9623   337438  155.657 
+    4 | 0.0955 |   304149    12163   316312  140.898 
+    5 | 0.0876 |   278815    13922   292737  122.418 
+    6 | 0.0798 |   254154    28202   282357   63.949 
+
+                                                                    214s
+  237s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                       10s
+  Prepare partitions                                                  3s
+  Prepare segments (LASmod = 1.00)                                   39s
+  Estimate local tissue thresholds (WM)                              38s
+  Estimate local tissue thresholds (GM)                              48s
+  Estimate local tissue thresholds (CSF/BG)                          12s
+  Intensity transformation                                          157s
+  SANLM denoising after LAS (medium)                                 72s
+                                                                     72s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             19s
+  Major structures                                                   10s
+  Ventricle detection                                                36s
+  Blood vessel detection                                             25s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.04)                       61s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          5s
+  Side alignment                                                     11s
+  Final corrections                                                  11s
+                                                                    178s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   39s
+    AMAP peaks: [CSF,GM,WM] = [0.41±0.07,0.68±0.09,0.97±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    9s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        7s
+                                                                     22s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1215 |   386872        0   386872  301.469 
+    2 | 0.1087 |   346125    13273   359397  100.608 
+    3 | 0.1078 |   343176    14288   357464   31.569 
+    4 | 0.1071 |   340970     7400   348370  166.663 
+    5 | 0.1005 |   320003    21230   341233   50.979 
+    6 | 0.1004 |   319613    21228   340841   33.024 
+    7 | 0.1001 |   318750    10998   329748  147.782 
+    8 | 0.0924 |   294096    27100   321196   52.687 
+    9 | 0.0921 |   293319    27131   320450   32.597 
+   10 | 0.0919 |   292736    14195   306931  136.810 
+   11 | 0.0832 |   264976    31816   296792   54.218 
+   12 | 0.0827 |   263472    32113   295585   34.836 
+   13 | 0.0828 |   263795    16977   280772  115.494 
+   14 | 0.0749 |   238490    32483   270973   51.449 
+   15 | 0.0741 |   236004    33462   269466   34.518 
+   16 | 0.0738 |   234875    35393   270268   41.331 
+   17 | 0.0734 |   233869    35619   269487   30.689 
+   18 | 0.0732 |   232954    36390   269344   28.828 
+                                                                    535s
+  Jacobian determinant (RMS):  0.097749 
+           Template Matching:  0.073154 
+Write result maps:                                                   71s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             34s
+  ROI estimation of 'neuromorphometrics' atlas                       16s
+                                                                     50s
+Quality check:                                                       37s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-117_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 42 minute(s) and 27 second(s).
+Image Quality Rating (IQR):  86.50% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 3/8:       ./Desktop/workspace/t1s/sub-124_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            85s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            5s
+APP: Rough bias correction:                                       
+  Initialize                                                         17s
+  Estimate background                                                32s
+  Initial correction                                                 21s
+  Refine background                                                  14s
+  Final correction                                                   23s
+  Final scaling                                                      20s
+                                                                    138s
+Affine registration                                                  14s
+Affine registration                                                  35s
+SPM preprocessing 1 (estimate 1):                                   209s
+SPM preprocessing 1 (estimate 2):                                   164s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 51s
+  Update Segmentation                                               118s
+  Update Skull-Stripping                                            113s
+  Update probability maps                                            21s
+                                                                    303s
+Global intensity correction:                                         53s
+SANLM denoising after intensity normalization (medium):              32s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1178 |   375040        0   375040  299.817 
+    2 | 0.1046 |   333004     5873   338877  180.242 
+    3 | 0.0986 |   314067     8710   322777  155.157 
+    4 | 0.0923 |   293861    11356   305217  143.205 
+    5 | 0.0847 |   269872    13398   283270  122.275 
+    6 | 0.0774 |   246373    27170   273543   63.215 
+
+                                                                    236s
+  254s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                       11s
+  Prepare partitions                                                  5s
+  Prepare segments (LASmod = 1.06)                                   48s
+  Estimate local tissue thresholds (WM)                              45s
+  Estimate local tissue thresholds (GM)                              59s
+  Estimate local tissue thresholds (CSF/BG)                          10s
+  Intensity transformation                                          184s
+  SANLM denoising after LAS (medium)                                 61s
+                                                                     61s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             19s
+  Major structures                                                   16s
+  Ventricle detection                                                32s
+  Blood vessel detection                                             23s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.00)                       56s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          4s
+  Side alignment                                                      8s
+  Final corrections                                                  10s
+                                                                    168s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   40s
+    AMAP peaks: [CSF,GM,WM] = [0.42±0.05,0.68±0.10,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    9s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        4s
+                                                                     19s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1269 |   404074        0   404074  323.063 
+    2 | 0.1126 |   358499    14946   373445  111.178 
+    3 | 0.1114 |   354708    16004   370712   40.212 
+    4 | 0.1115 |   355201     8351   363552  181.588 
+    5 | 0.1040 |   331291    23959   355249   60.562 
+    6 | 0.1037 |   330377    24140   354517   37.984 
+    7 | 0.1046 |   332957    12565   345522  161.288 
+    8 | 0.0957 |   304867    30878   335745   58.232 
+    9 | 0.0955 |   304146    30540   334686   37.109 
+   10 | 0.0963 |   306519    16098   322617  146.955 
+   11 | 0.0865 |   275490    35731   311221   59.797 
+   12 | 0.0860 |   273763    35752   309515   39.006 
+   13 | 0.0864 |   275031    18963   293994  121.229 
+   14 | 0.0778 |   247862    35623   283486   52.677 
+   15 | 0.0770 |   245169    36581   281749   34.819 
+   16 | 0.0766 |   244015    38507   282522   40.379 
+   17 | 0.0763 |   242864    38776   281640   29.951 
+   18 | 0.0759 |   241770    39589   281358   26.663 
+                                                                    508s
+  Jacobian determinant (RMS):  0.111132 
+           Template Matching:  0.075923 
+Write result maps:                                                   62s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             33s
+  ROI estimation of 'neuromorphometrics' atlas                       27s
+                                                                     60s
+Quality check:                                                       36s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-124_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 43 minute(s) and 1 second(s).
+Image Quality Rating (IQR):  81.22% (B-)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 4/8:       ./Desktop/workspace/t1s/sub-130_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            63s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            4s
+APP: Rough bias correction:                                       
+  Initialize                                                         12s
+  Estimate background                                                15s
+  Initial correction                                                 14s
+  Refine background                                                   8s
+  Final correction                                                   14s
+  Final scaling                                                      27s
+                                                                    102s
+Affine registration                                                  28s
+Affine registration                                                  58s
+SPM preprocessing 1 (estimate 1):                                   245s
+SPM preprocessing 1 (estimate 2):                                   130s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 53s
+  Update Segmentation                                               117s
+  Update Skull-Stripping                                             95s
+  Update probability maps                                            15s
+                                                                    280s
+Global intensity correction:                                         33s
+SANLM denoising after intensity normalization (medium):              30s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1203 |   382958        0   382958  293.061 
+    2 | 0.1083 |   344969     5893   350862  171.198 
+    3 | 0.1030 |   328065     8454   336520  152.369 
+    4 | 0.0967 |   307886    11299   319185  141.966 
+    5 | 0.0893 |   284306    13484   297790  123.149 
+    6 | 0.0818 |   260385    27770   288154   64.185 
+
+                                                                    222s
+  237s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                       11s
+  Prepare partitions                                                  3s
+  Prepare segments (LASmod = 1.16)                                   50s
+  Estimate local tissue thresholds (WM)                              38s
+  Estimate local tissue thresholds (GM)                              51s
+  Estimate local tissue thresholds (CSF/BG)                          11s
+  Intensity transformation                                          169s
+  SANLM denoising after LAS (medium)                                 59s
+                                                                     59s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             19s
+  Major structures                                                   11s
+  Ventricle detection                                                35s
+  Blood vessel detection                                             28s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.04)                       71s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          5s
+  Side alignment                                                     10s
+  Final corrections                                                  10s
+                                                                    188s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   50s
+    AMAP peaks: [CSF,GM,WM] = [0.43±0.07,0.68±0.09,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    9s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        4s
+                                                                     19s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1315 |   418809        0   418809  329.269 
+    2 | 0.1160 |   369539    15657   385196  112.143 
+    3 | 0.1156 |   367983    15202   383185   37.965 
+    4 | 0.1158 |   368622     7868   376489  176.896 
+    5 | 0.1086 |   345897    22897   368793   51.825 
+    6 | 0.1086 |   345947    22419   368366   33.170 
+    7 | 0.1097 |   349200    11619   360819  159.179 
+    8 | 0.1011 |   321811    29609   351420   57.166 
+    9 | 0.1010 |   321607    28864   350470   37.301 
+   10 | 0.1019 |   324472    15254   339727  148.134 
+   11 | 0.0920 |   293097    35154   328251   61.417 
+   12 | 0.0915 |   291517    35113   326629   39.945 
+   13 | 0.0923 |   293937    18653   312590  125.081 
+   14 | 0.0833 |   265119    36369   301488   57.821 
+   15 | 0.0823 |   262181    37455   299636   39.663 
+   16 | 0.0819 |   260702    39688   300390   45.674 
+   17 | 0.0815 |   259567    39872   299439   35.418 
+   18 | 0.0811 |   258388    40812   299201   33.014 
+                                                                    521s
+  Jacobian determinant (RMS):  0.106427 
+           Template Matching:  0.081142 
+Write result maps:                                                   84s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             28s
+  ROI estimation of 'neuromorphometrics' atlas                       10s
+                                                                     39s
+Quality check:                                                       28s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-130_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 41 minute(s) and 26 second(s).
+Image Quality Rating (IQR):  86.33% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 5/8:       ./Desktop/workspace/t1s/sub-207_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            60s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            4s
+APP: Rough bias correction:                                       
+  Initialize                                                         13s
+  Estimate background                                                16s
+  Initial correction                                                 13s
+  Refine background                                                   8s
+  Final correction                                                   11s
+  Final scaling                                                      18s
+                                                                     91s
+Affine registration                                                  51s
+Affine registration                                                  65s
+SPM preprocessing 1 (estimate 1):                                   176s
+SPM preprocessing 1 (estimate 2):                                   155s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 50s
+  Update Segmentation                                               121s
+  Update Skull-Stripping                                             97s
+  Update probability maps                                            27s
+                                                                    296s
+Global intensity correction:                                         42s
+SANLM denoising after intensity normalization (medium):              37s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1308 |   416604        0   416604  325.861 
+    2 | 0.1135 |   361326     7812   369137  192.330 
+    3 | 0.1062 |   338263    11086   349350  163.644 
+    4 | 0.0987 |   314313    13989   328302  148.057 
+    5 | 0.0905 |   288203    15868   304072  125.100 
+    6 | 0.0823 |   262009    31146   293155   64.340 
+
+                                                                    240s
+  266s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                       21s
+  Prepare partitions                                                  6s
+  Prepare segments (LASmod = 1.11)                                   39s
+  Estimate local tissue thresholds (WM)                              37s
+  Estimate local tissue thresholds (GM)                              64s
+  Estimate local tissue thresholds (CSF/BG)                          10s
+  Intensity transformation                                          182s
+  SANLM denoising after LAS (medium)                                 59s
+                                                                     59s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             17s
+  Major structures                                                   10s
+  Ventricle detection                                                29s
+  Blood vessel detection                                             24s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.19)                       61s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          4s
+  Side alignment                                                      8s
+  Final corrections                                                   9s
+                                                                    162s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   49s
+    AMAP peaks: [CSF,GM,WM] = [0.42±0.07,0.69±0.09,0.97±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    9s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        6s
+                                                                     21s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1387 |   441531        0   441531  345.371 
+    2 | 0.1191 |   379408    18523   397931  136.825 
+    3 | 0.1169 |   372326    20010   392336   56.944 
+    4 | 0.1169 |   372144    10712   382856  185.789 
+    5 | 0.1082 |   344530    28443   372973   65.925 
+    6 | 0.1078 |   343271    28662   371933   40.382 
+    7 | 0.1088 |   346558    14947   361505  161.332 
+    8 | 0.0994 |   316580    34287   350867   58.802 
+    9 | 0.0991 |   315564    34067   349631   35.969 
+   10 | 0.1002 |   319123    17903   337026  144.813 
+   11 | 0.0901 |   286861    38156   325016   57.528 
+   12 | 0.0895 |   284882    38341   323223   35.231 
+   13 | 0.0903 |   287484    20303   307787  118.991 
+   14 | 0.0815 |   259489    37275   296764   51.670 
+   15 | 0.0805 |   256370    38365   294736   34.319 
+   16 | 0.0801 |   255206    40481   295687   40.345 
+   17 | 0.0797 |   253835    40769   294604   28.859 
+   18 | 0.0793 |   252590    41675   294265   25.321 
+                                                                    511s
+  Jacobian determinant (RMS):  0.114276 
+           Template Matching:  0.079321 
+Write result maps:                                                   64s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             31s
+  ROI estimation of 'neuromorphometrics' atlas                        8s
+                                                                     39s
+Quality check:                                                       39s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-207_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 41 minute(s) and 25 second(s).
+Image Quality Rating (IQR):  86.47% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 6/8:       ./Desktop/workspace/t1s/sub-222_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            81s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            5s
+APP: Rough bias correction:                                       
+  Initialize                                                         15s
+  Estimate background                                                17s
+  Initial correction                                                 16s
+  Refine background                                                   9s
+  Final correction                                                   12s
+  Final scaling                                                      20s
+                                                                    106s
+Affine registration                                                  17s
+Affine registration                                                  47s
+SPM preprocessing 1 (estimate 1):                                   244s
+SPM preprocessing 1 (estimate 2):                                   123s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 50s
+  Update Segmentation                                               116s
+  Update Skull-Stripping                                            103s
+  Update probability maps                                            18s
+                                                                    288s
+Global intensity correction:                                         37s
+SANLM denoising after intensity normalization (medium):              29s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1200 |   382098        0   382098  309.719 
+    2 | 0.1030 |   328127     6994   335122  174.280 
+    3 | 0.0968 |   308122     8603   316725  145.095 
+    4 | 0.0904 |   287735    10474   298208  133.086 
+    5 | 0.0835 |   266006    11937   277943  115.172 
+    6 | 0.0769 |   244961    24267   269228   58.596 
+
+                                                                    233s
+  252s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                       11s
+  Prepare partitions                                                  3s
+  Prepare segments (LASmod = 1.00)                                   52s
+  Estimate local tissue thresholds (WM)                              40s
+  Estimate local tissue thresholds (GM)                              46s
+  Estimate local tissue thresholds (CSF/BG)                          10s
+  Intensity transformation                                          167s
+  SANLM denoising after LAS (medium)                                 71s
+                                                                     71s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             21s
+  Major structures                                                   12s
+  Ventricle detection                                                32s
+  Blood vessel detection                                             25s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.00)                       66s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          5s
+  Side alignment                                                     11s
+  Final corrections                                                  12s
+                                                                    185s
+Blood vessel correction (BVCstr=0.50):                                5s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   46s
+    AMAP peaks: [CSF,GM,WM] = [0.42±0.06,0.68±0.10,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    9s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        4s
+                                                                     19s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1303 |   414837        0   414837  341.533 
+    2 | 0.1100 |   350351    18238   368589  139.119 
+    3 | 0.1088 |   346441    18252   364694   46.162 
+    4 | 0.1077 |   342949     9720   352670  169.083 
+    5 | 0.1008 |   321059    23884   344942   56.295 
+    6 | 0.1007 |   320628    23733   344361   35.925 
+    7 | 0.1005 |   320177    12278   332456  146.116 
+    8 | 0.0930 |   296129    27764   323893   52.681 
+    9 | 0.0928 |   295450    27603   323053   33.927 
+   10 | 0.0928 |   295619    14478   310097  134.311 
+   11 | 0.0844 |   268866    31183   300049   53.275 
+   12 | 0.0839 |   267147    31572   298718   33.668 
+   13 | 0.0843 |   268470    16630   285100  113.710 
+   14 | 0.0766 |   243815    31458   275273   49.866 
+   15 | 0.0757 |   241156    32556   273712   33.540 
+   16 | 0.0755 |   240327    34306   274632   40.446 
+   17 | 0.0751 |   239146    34657   273803   30.079 
+   18 | 0.0748 |   238206    35379   273585   27.254 
+                                                                    595s
+  Jacobian determinant (RMS):  0.098493 
+           Template Matching:  0.074804 
+Write result maps:                                                   80s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             34s
+  ROI estimation of 'neuromorphometrics' atlas                       10s
+                                                                     43s
+Quality check:                                                       30s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-222_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 43 minute(s) and 31 second(s).
+Image Quality Rating (IQR):  86.46% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 7/8:       ./Desktop/workspace/t1s/sub-306_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            59s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            4s
+APP: Rough bias correction:                                       
+  Initialize                                                         12s
+  Estimate background                                                31s
+  Initial correction                                                 17s
+  Refine background                                                   9s
+  Final correction                                                   15s
+  Final scaling                                                      15s
+                                                                    113s
+Affine registration                                                  33s
+Affine registration                                                  44s
+SPM preprocessing 1 (estimate 1):                                   282s
+SPM preprocessing 1 (estimate 2):                                   204s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 50s
+  Update Segmentation                                               116s
+  Update Skull-Stripping                                             91s
+  Update probability maps                                            19s
+                                                                    276s
+Global intensity correction:                                         40s
+SANLM denoising after intensity normalization (medium):              31s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1242 |   395368        0   395368  302.781 
+    2 | 0.1093 |   347922     6412   354334  172.637 
+    3 | 0.1033 |   328811     8763   337574  148.687 
+    4 | 0.0970 |   308893    11068   319961  140.176 
+    5 | 0.0900 |   286462    13132   299594  122.654 
+    6 | 0.0824 |   262373    27476   289849   66.256 
+
+                                                                    252s
+  268s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                        9s
+  Prepare partitions                                                  3s
+  Prepare segments (LASmod = 1.05)                                   29s
+  Estimate local tissue thresholds (WM)                              37s
+  Estimate local tissue thresholds (GM)                              53s
+  Estimate local tissue thresholds (CSF/BG)                          10s
+  Intensity transformation                                          149s
+  SANLM denoising after LAS (medium)                                 59s
+                                                                     59s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             18s
+  Major structures                                                   10s
+  Ventricle detection                                                38s
+  Blood vessel detection                                             32s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.08)                       62s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          6s
+  Side alignment                                                     10s
+  Final corrections                                                  12s
+                                                                    188s
+Blood vessel correction (BVCstr=0.50):                                8s
+Amap using initial SPM12 segmentations (MRF filter strength 0.07):   44s
+    AMAP peaks: [CSF,GM,WM] = [0.44±0.07,0.69±0.09,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                   10s
+  Level 1 cleanup (brain masking)                                     4s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        5s
+                                                                     21s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1326 |   422340        0   422340  323.430 
+    2 | 0.1162 |   370177    15469   385646  127.360 
+    3 | 0.1149 |   365762    16341   382103   45.522 
+    4 | 0.1144 |   364148     8596   372744  172.307 
+    5 | 0.1074 |   342117    23040   365156   58.142 
+    6 | 0.1072 |   341373    23114   364486   40.331 
+    7 | 0.1073 |   341829    12082   353912  153.801 
+    8 | 0.0992 |   316004    28891   344895   56.880 
+    9 | 0.0990 |   315127    28817   343944   38.622 
+   10 | 0.0994 |   316439    15125   331564  142.203 
+   11 | 0.0902 |   287231    33692   320923   57.763 
+   12 | 0.0896 |   285340    34043   319383   38.116 
+   13 | 0.0903 |   287508    17998   305506  120.577 
+   14 | 0.0816 |   259820    35135   294955   55.401 
+   15 | 0.0806 |   256694    36421   293115   38.047 
+   16 | 0.0802 |   255390    38662   294052   44.063 
+   17 | 0.0798 |   253990    39140   293130   33.951 
+   18 | 0.0794 |   252766    40088   292854   31.392 
+                                                                    603s
+  Jacobian determinant (RMS):  0.111548 
+           Template Matching:  0.079376 
+Write result maps:                                                   66s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             28s
+  ROI estimation of 'neuromorphometrics' atlas                        9s
+                                                                     37s
+Quality check:                                                       28s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-306_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 45 minute(s) and 18 second(s).
+Image Quality Rating (IQR):  86.02% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+CAT12.6 r1450: 8/8:       ./Desktop/workspace/t1s/sub-311_ses-BL_T1w.nii
+------------------------------------------------------------------------
+SANLM denoising (medium):                                            60s
+Internal resampling (0.88x1.20x0.88mm > 1.00x1.00x1.00mm):            3s
+APP: Rough bias correction:                                       
+  Initialize                                                         17s
+  Estimate background                                                24s
+  Initial correction                                                 15s
+  Refine background                                                   6s
+  Final correction                                                    9s
+  Final scaling                                                      12s
+                                                                     92s
+Affine registration                                                   7s
+Affine registration                                                  13s
+SPM preprocessing 1 (estimate 1):                                   190s
+SPM preprocessing 1 (estimate 2):                                   105s
+SPM preprocessing 2 (write):                                      
+  Write Segmentation                                                 29s
+  Update Segmentation                                                61s
+  Update Skull-Stripping                                             65s
+  Update probability maps                                            13s
+                                                                    168s
+Global intensity correction:                                         26s
+SANLM denoising after intensity normalization (medium):              25s
+Fast registration                                                 
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1218 |   387897        0   387897  308.492 
+    2 | 0.1061 |   337866     6567   344433  173.746 
+    3 | 0.1003 |   319381     8640   328021  145.864 
+    4 | 0.0943 |   300429    10600   311030  135.574 
+    5 | 0.0875 |   278780    12310   291089  118.481 
+    6 | 0.0803 |   255731    25493   281224   62.124 
+
+                                                                    141s
+  151s
+Local adaptive segmentation (LASstr=0.50):                        
+  Prepare maps                                                        7s
+  Prepare partitions                                                  2s
+  Prepare segments (LASmod = 1.06)                                   21s
+  Estimate local tissue thresholds (WM)                              27s
+  Estimate local tissue thresholds (GM)                              37s
+  Estimate local tissue thresholds (CSF/BG)                           7s
+  Intensity transformation                                          107s
+  SANLM denoising after LAS (medium)                                 57s
+                                                                     57s
+ROI segmentation (partitioning):                                  
+  Atlas -> subject space                                             14s
+  Major structures                                                    7s
+  Ventricle detection                                                24s
+  Blood vessel detection                                             26s
+  WMH detection (WMHCstr=0.50 > WMHCstr'=0.07)                       46s
+  Manual stroke lesion detection                                      0s
+  Closing of deep structures                                          4s
+  Side alignment                                                      8s
+  Final corrections                                                   8s
+                                                                    135s
+Blood vessel correction (BVCstr=0.50):                                3s
+Amap using initial SPM12 segmentations (MRF filter strength 0.06):   30s
+    AMAP peaks: [CSF,GM,WM] = [0.43±0.07,0.69±0.09,0.98±0.04]
+Final cleanup (gcutstr=0.25):                                     
+  Level 1 cleanup (ROI estimation)                                    7s
+  Level 1 cleanup (brain masking)                                     3s
+  Level 2 cleanup (CSF correction)                                    2s
+  Level 3 cleanup (CSF/WM PVE)                                        5s
+                                                                     16s
+
+
+Dartel registration with 1.50 mm on a 1.50 mm Template:           
+  Template: "/Users/justin/spm12/toolbox/cat12/templates_1.50mm/Template_1_IXI555_MNI152.nii"
+    1 | 0.1304 |   415128        0   415128  337.945 
+    2 | 0.1104 |   351478    17629   369108  133.500 
+    3 | 0.1088 |   346378    18820   365197   40.778 
+    4 | 0.1083 |   344782     9906   354688  169.696 
+    5 | 0.1013 |   322587    24276   346862   53.809 
+    6 | 0.1010 |   321750    24531   346280   34.589 
+    7 | 0.1013 |   322586    12744   335330  148.586 
+    8 | 0.0936 |   298183    28415   326598   52.706 
+    9 | 0.0933 |   297157    28576   325733   32.512 
+   10 | 0.0938 |   298711    14925   313635  135.920 
+   11 | 0.0853 |   271511    31995   303506   53.517 
+   12 | 0.0847 |   269683    32434   302117   33.803 
+   13 | 0.0853 |   271550    17115   288665  114.651 
+   14 | 0.0774 |   246406    32411   278818   50.900 
+   15 | 0.0765 |   243485    33709   277193   34.331 
+   16 | 0.0761 |   242432    35607   278039   40.807 
+   17 | 0.0758 |   241225    35940   277165   30.894 
+   18 | 0.0754 |   240217    36747   276964   27.957 
+                                                                    333s
+  Jacobian determinant (RMS):  0.101927 
+           Template Matching:  0.075435 
+Write result maps:                                                   48s
+ROI estimation:                                                   
+  Data mapping to normalized atlas space                             21s
+  ROI estimation of 'neuromorphometrics' atlas                        6s
+                                                                     27s
+Quality check:                                                       23s
+Print 'Graphics' figure to: 
+  /Users/justin/Desktop/workspace/t1s/report/catreport_sub-311_ses-BL_T1w.pdf
+
+------------------------------------------------------------------------
+CAT preprocessing takes 28 minute(s) and 35 second(s).
+Image Quality Rating (IQR):  86.59% (B)
+Segmentations are saved in /Users/justin/Desktop/workspace/t1s/mri
+Reports are saved in /Users/justin/Desktop/workspace/t1s/report
+Labels are saved in /Users/justin/Desktop/workspace/t1s/label
+------------------------------------------------------------------------
+
+
+________________________________________________________________________
+CAT12 Segmentation job finished.
