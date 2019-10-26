@@ -110,7 +110,18 @@ You can comment this section out prior to final report with data collection.
 ## Results
 
 
-### Data preparation
+### Preprocessing
+
+
+![Fig.1 Raw T1-weighted MRI image](../images/raw.png)
+
+![Fig.2 Partial Volume Segmentation](../images/partialVol.png)
+
+![Fig.3 Grey Matter Segmentation. Modulated and spatially normalized to MNI space using DARTEL template. ](../images/mwp_gm.png)
+
+![Fig.4 White Matter Segmentation. Modulated and spatially normalized to MNI space using DARTEL template.](../images/mwp_wm.png)
+
+
 
 Data preparation following the analysis plan.
 	
