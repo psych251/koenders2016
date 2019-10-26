@@ -24,9 +24,9 @@ I will be using the subject T1-weighted MRI baseline and follow-up scan data fro
 
 ## VBM Procedure Overview:
 
-1. Normalization
-2. Segmentation of T1w data into grey matter, white matter, and CSF
-3. Smoothing of voxels
+1. Segmentation of T1w data into grey matter, white matter, and CSF
+2. Grey matter normalization using DARTEL
+3. Voxel smoothing
 4. Statistical analysis
 
 ## Anticipated Challenges
@@ -96,22 +96,21 @@ Significance was defined as follows:
 
 The main difference between this pipeline reproduction and the original study is the possible usage of SPM12. This possibility is not likely as it should be straightforward to resolve incompatabilities by using an older version of Matlab (e.g. one released around SPM8 like R2014b).
 
-### Methods Addendum (Post Data Collection)
-
-You can comment this section out prior to final report with data collection.
-
-#### Actual Sample
-  Sample size, demographics, data exclusions based on rules spelled out in analysis plan
-
-#### Differences from pre-data collection methods plan
-  Any differences from what was described as the original plan, or “none”.
-
-
 ## Results
 
+### VBM Preprocessing
 
-### Preprocessing
+**10/26/2019 - Status Update**
 
+*CAT12 pipeline: QC on segmented data on MacOS 10.15*
+
+*VBM8 pipeline: tissue segmentation on Windows 10*
+
+Segmentation has been carried out on all subjects using SPM12 CAT12. Partial volume estimates, grey matter, and white matter images are displayed in Figures 1-4. This took 26 computer hours. Images are being visually inspected for quality control (essentially examining accuracy of tissue separation and other artifacts).
+
+The original study's methods do not work using MacOS 10.15, even when accomodating for old Matlab versions (2014a). They do run in Windows 10, so currently the "true" replication is being carried on a Windows 10 computer running Matlab 2014a and using SPM8 and the VBM8 toolbox. This is expected to take 25-40 hours.
+
+I will try to complete both pipelines and see how they compare to the original study's findings.
 
 ![Fig.1 Raw T1-weighted MRI image](../images/raw.png)
 
