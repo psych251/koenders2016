@@ -24,7 +24,7 @@ I will be using the subject T1-weighted MRI baseline and follow-up scan data fro
 
 ## VBM Procedure Overview:
 
-1. Segmentation of T1w data into grey matter, white matter, and CSF
+1. Segmentation of T1w data into grey matter and white matter
 2. Grey matter normalization using DARTEL
 3. Voxel smoothing
 4. Statistical analysis
@@ -100,15 +100,15 @@ The main difference between this pipeline reproduction and the original study is
 
 ### VBM Preprocessing
 
-**10/26/2019 - Status Update**
+**10/27/2019 - Status Update**
 
-*CAT12 pipeline: QC on segmented data on MacOS 10.15*
+*CAT12 pipeline: VBM preprocessing completed using Matlab 2019b on MacOS 10.15. Preparing for statistical analysis.*
 
-*VBM8 pipeline: tissue segmentation on Windows 10*
+*VBM8 pipeline: tissue segmentation completed using Matlab 2014a Windows 10. Undergoing visual inspection and then smoothing.*
 
-Segmentation has been carried out on all subjects using SPM12 CAT12. Partial volume estimates, grey matter, and white matter images are displayed in Figures 1-4. This took 26 computer hours. Images are being visually inspected for quality control (essentially examining accuracy of tissue separation and other artifacts).
+Segmentation and rigid-body spatial registration to the DARTEL template has been carried out on all subjects using SPM12 CAT12. Partial volume estimates, grey matter, and white matter images are displayed in Figures 1-4. This took 26 processing hours, running in parallel. Logs are located in the *spm_logs* directory. Images were visually inspected for quality control (examining accuracy of tissue separation and other artifacts). Total intracranial volume (TIV) was estimated for each subject followed by spatial smoothing using an 8mm Gaussian kernel. 
 
-The original study's methods do not work using MacOS 10.15, even when accomodating for old Matlab versions (2014a). They do run in Windows 10, so currently the "true" replication is being carried on a Windows 10 computer running Matlab 2014a and using SPM8 and the VBM8 toolbox. This is expected to take 25-40 hours.
+The original study's methods do not work using MacOS 10.15, even when accomodating for old Matlab versions (2014a). They do run in Windows 10, so currently the "true" replication is being carried on a Windows 10 computer running Matlab 2014a and using SPM8/VBM8 toolbox. Segmentation has been completed using this VBM8 pipeline.
 
 I will try to complete both pipelines and see how they compare to the original study's findings.
 
