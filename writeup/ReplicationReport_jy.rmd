@@ -100,7 +100,7 @@ The main difference between this pipeline reproduction and the original study is
 
 ### VBM Preprocessing
 
-**10/27/2019 - Status Update**
+### **10/27/2019 - Status Update**
 
 *CAT12 pipeline: VBM preprocessing completed using Matlab 2019b on MacOS 10.15. Preparing for statistical analysis.*
 
@@ -120,6 +120,27 @@ I will try to complete both pipelines and see how they compare to the original s
 
 ![Fig.4 White Matter Segmentation. Modulated and spatially normalized to MNI space using DARTEL template.](../images/mwp_wm.png)
 
+### **11/16/2019 - Status Update**
+*Overall, the processing has been completed but I have been unable to replicate the findings.*
+
+Both the new (CAT12) and original (VBM8) processing pipelines have been completed. All imaging data has been processed up to the 8mm kernel smoothing stage (see Fig.5) and has undergone statistical analysis. 
+
+![Fig.5 Example of a smoothed grey matter image using an 8mm kernel.](../images/320_smoothed.png)
+
+The statistical analysis is conducted by setting up a statistical model using SPM's GLM tool (Fig. 6), and then defining the contrasts of the two-sample t test (in this case users > ctrl or users < ctrl). I was able to set up and analyze the data following the author's methods and also using the tool's official documentation. I set total intracranial volume (TIV) as a covariate similar to the authors.
+
+![Fig.6 Statistical Analysis Design Matrix - CAT12](../images/t_test_design_tiv.png)
+
+No significant clusters appeared in either contrast when controlling for multiple comparisons (FWE @ 0.05). This was true for both pipelines. The two figures below show the results of the analysis for the two contrasts, when using the modern CAT12 pipeline. The original VBM8 looks similar.
+
+I had to remove all statistical thresholds (no multiple comparisons corrections) and cluster size thresholds (clusters can be very small) to get some regions to appear. I also entered the coordinates of the key finding (the larger cerebellum grey matter volume in users at baseline [26,-70,-20]) and did not observe any GMV differences.
+
+![Fig.7 Users > Ctrl - CAT12](../images/users_more_ctrl_uncorr_001.png)
+![Fig.8 Users < Ctrl - CAT12](../images/users_less_ctrl_uncorr.png)
+
+*Current steps*
+
+Although I followed the data processing instructions as indicated, I am going through both pipelines again. I suspect there may have been a missed step in the initial segmentation because there are multiple parameters and smaller steps wrapped into a single batch process. Another possibility is that the statistical analysis may have been incorrectly entered.
 
 
 Data preparation following the analysis plan.
