@@ -17,7 +17,7 @@ This study examines structural brain changes in young adult cannabis users in a 
 ## Description of paper
 The study by Koenders et al. examined whether structural brain changes were associated with substance use (focusing on cannabis) over a three-year period. The participants of the study were young adult users and matched healthy controls. The study used a magnetic resonance imaging (MRI) technique called voxel-based morphometry (VBM) to measure grey matter volume (GMV) changes. They assessed drug usage with questionnaires for nicotine, alcohol, and cannabis usage. 
 
-I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline and two-sample t-tests.
+I aim to replicate the study’s finding of significant cerebellar differences between users and healthy controls at baseline using the authors’ voxel-based morphometry pipeline and a two-sample t-test.
 
 ## Description of stimuli and procedures
 I will be using the subject T1-weighted MRI baseline and follow-up scan data from OpenNeuro. (https://openneuro.org/datasets/ds000174/versions/1.0.1). SPM8 software will be used to conduct voxel-based morphometry analysis (using VBM8 of SPM).
@@ -40,10 +40,6 @@ Project Repository: https://github.com/psych251/koenders2016
 Original Paper: https://github.com/psych251/koenders2016/tree/master/original_paper
 
 ## Methods
-
-### Power Analysis
-
-*Original effect size, power analysis for samples to achieve 80%, 90%, 95% power to detect that effect size.  Considerations of feasibility for selecting planned sample size.*
 
 ### Planned Sample
 
