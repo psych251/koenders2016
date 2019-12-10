@@ -71,19 +71,14 @@ finally smoothed with an 8-mm Gaussian kernel. Note that each image of the regio
 matter volume was corrected for individual brain size, since this step is part of the VBM8
 toolbox routine."
 
-**ROIs**  
-The study examined specific regions of interest (ROIs) that were based on previous cross-sectional findings. They were anatomically defined using the Nielsen and Hansen’s volume of interest online database. The ROIs were the: OFC, ACC, insula, striatum, thalamus, amygdala, hippocampus and cerebellum
-
 **Replication Study Differences:**  
 SPM12 may be used for the VBM processing pipeline instead of SPM8 due to possible incompatabilities of the older SPM8 / VBM-8 module and the current version of Matlab 2019a. If SPM12 is employed, the CAT12 VBM module will be used instead of VBM-8.
 
-This replication will focus on the cerebellum ROI as it was the primary baseline finding.
+This replication will focus on the cerebellum cluster as it was the primary baseline finding.
 
 ### Analysis of VBM Data
 
 The key analysis of interest is a two-sample t-test of the grey matter volumes at baseline between the cannabis users group and the healthy control group. The result of interest is a significant difference of GMV located at the cerebellum between users and controls.
-
-In addition to the two-sample t-test, I will check the cerebellar ROI's grey matter volumes for normality.
 
 Significance was defined as follows:
 "For all analyses, we first performed region of interest ROI analyses, where structural differences within ROI masks were considered significant if p < .001, with an FWE-corrected cluster probability of p < .05 adjusted for the small search volume [36].
@@ -134,41 +129,40 @@ I had to remove all statistical thresholds (no multiple comparisons corrections)
 ![Fig.7 Users > Ctrl - CAT12](../images/users_more_ctrl_uncorr_001.png)
 ![Fig.8 Users < Ctrl - CAT12](../images/users_less_ctrl_uncorr.png)
 
-*Current steps*
-
 Although I followed the data processing instructions as indicated, I am going through both pipelines again. I suspect there may have been a missed step in the initial segmentation because there are multiple parameters and smaller steps wrapped into a single batch process. Another possibility is that the statistical analysis may have been incorrectly entered.
 
+### **12/2/2019**
+I realized that I did not include the proper covariates in my analyses. In addition to total intracranial volume (TIV), the authors also included age and sex. Note, TIV is automatically adjusted for in VBM8, whereas in CAT12, it is estimated and then manually included in the design matrix. The inclusion of age and gender did not yield significant results though.
 
-Data preparation following the analysis plan.
-	
-```{r include=F}
-###Data Preparation
+### **12/9/2019**
 
-####Load Relevant Libraries and Functions
-
-####Import data
-
-#### Data exclusion / filtering
-
-#### Prepare data for analysis - create columns etc.
-```
+As a check, I conducted the pipeline on the follow-up data using both pipelines. Neither the VBM8 or CAT12 versions yielded significant results (with FWE multiple comparisons corrections). I conducted a series of quality checks using CAT12. 
 
 ### Confirmatory analysis
 
-The analyses as specified in the analysis plan.  
+In my pipeline reproduction analysis, the most significant finding observed in the CB group (users) less than HC group (ctrls) was:
 
-*Side-by-side graph with original graph is ideal here*
+* VBM8: pFWE-corr = 0.351, cluster size = 311, x,y,z = -11,-42,-26
+* CAT12: pFWE-corr = 0.973, cluster size = 41, x,y,z = 0, -78, -20
 
-###Exploratory analyses
-
-Any follow-up analyses desired (not required).  
 
 ## Discussion
 
 ### Summary of Replication Attempt
 
-Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.  
+The authors originally reported the following significant finding: 
+"Our previously reported cross-sectional finding of a cluster with larger grey matter volume in
+the CB group compared to the HC group in the cerebellum [17] is still significant in the present
+sample at baseline (cluster size = 393, *pFWE = .035*, x,y,z = 26,-70,-20)." 
+
+I tried to replicate this cerebellum finding using two different pipelines: 1) the author's VBM8 processing pipeline used in SPM8, and 2) the newer CAT12 method used in SPM12. I was unsuccessful in replicating the baseline cerebellum grey matter volume difference result. 
 
 ### Commentary
 
-Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt.  None of these need to be long.
+I think one of the main reasons why this pipeline reproduction failed was due to a lack of detailed information on pipeline settings. 
+
+One clear takeway from this replication attempt is that neuroimaging methods are more complicated than what is typically described in a manuscript. The methods quoted from the original paper are not sufficient to reproduce the analysis. I initially reviewed their original paper, and then I went to review other VBM papers that used SPM. I ultimately got the most help from consulting the SPM8 and SPM12 instruction manuals for VBM8 and CAT12, watching SPM vbm tutorials on Youtube, and using the SPM user forum. 
+
+The majority of the pipeline is image (pre)-processing. This information, although vital to the analysis, is not very interesting to readers, so it makes sense that it gets left out in the final manuscripts. Unfortunately, this absence combined with the neuroimaging's lack of processing standards, makes reproducibility a challenge in the field. Luckily, things like fMRIprep and the BIDS data standard are helping everyone get onto the processing standard. I think that this will help progress the field significantly.
+
+
