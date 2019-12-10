@@ -1640,29 +1640,33 @@ SPM12 may be used for the VBM processing pipeline instead of SPM8 due to possibl
 </div>
 <div id="section-1" class="section level3">
 <h3><strong>12/9/2019</strong></h3>
-<p>As a check, I conducted the pipeline on the follow-up data using both pipelines. Neither the VBM8 or CAT12 versions yielded significant results (with FWE multiple comparisons corrections).</p>
+<p>As a check, I conducted the pipeline on the follow-up data using both pipelines. Neither the VBM8 or CAT12 versions yielded significant results (with FWE multiple comparisons corrections). I conducted a series of quality checks using CAT12.</p>
 </div>
 <div id="confirmatory-analysis" class="section level3">
 <h3>Confirmatory analysis</h3>
-<p>The authors originally reported the following finding: “Our previously reported cross-sectional finding of a cluster with larger grey matter volume in the CB group compared to the HC group in the cerebellum [17] is still significant in the present sample at baseline (cluster size = 393, <em>pFWE = .035</em>, x,y,z = 26,-70,-20).”</p>
-<p>I tried to replicate this cerebellum finding using two different pipelines: 1) the author’s VBM8 processing pipeline used in SPM8, and 2) the newer CAT12 method used in SPM12. I was unsuccessful in replicating the significant finding.</p>
-<p>The most significant finding observed in the CB group (users) less than HC group (ctrls) was:</p>
+<p>In my pipeline reproduction analysis, the most significant findings observed in the CB group (users) less than HC group (ctrls) contrast of the t-test was:</p>
 <ul>
 <li>VBM8: pFWE-corr = 0.351, cluster size = 311, x,y,z = -11,-42,-26</li>
 <li>CAT12: pFWE-corr = 0.973, cluster size = 41, x,y,z = 0, -78, -20</li>
 </ul>
-<p><em>Side-by-side graph with original graph is ideal here</em></p>
+</div>
+<div id="additional-analysis-finish-this" class="section level3">
+<h3>Additional Analysis FINISH THIS</h3>
+<p>I conducted some quality checks to make sure the data processing.</p>
 </div>
 </div>
 <div id="discussion" class="section level2">
 <h2>Discussion</h2>
 <div id="summary-of-replication-attempt" class="section level3">
 <h3>Summary of Replication Attempt</h3>
-<p>Open the discussion section with a paragraph summarizing the primary result from the confirmatory analysis and the assessment of whether it replicated, partially replicated, or failed to replicate the original result.</p>
+<p>The authors originally reported the following significant finding: “Our previously reported cross-sectional finding of a cluster with larger grey matter volume in the CB group compared to the HC group in the cerebellum [17] is still significant in the present sample at baseline (cluster size = 393, <em>pFWE = .035</em>, x,y,z = 26,-70,-20).”</p>
+<p>I tried to replicate this cerebellum finding using two different pipelines: 1) the author’s VBM8 processing pipeline used in SPM8, and 2) the newer CAT12 method used in SPM12. I was unsuccessful in replicating the baseline cerebellum grey matter volume difference result.</p>
 </div>
 <div id="commentary" class="section level3">
 <h3>Commentary</h3>
-<p>Add open-ended commentary (if any) reflecting (a) insights from follow-up exploratory analysis, (b) assessment of the meaning of the replication (or not) - e.g., for a failure to replicate, are the differences between original and present study ones that definitely, plausibly, or are unlikely to have been moderators of the result, and (c) discussion of any objections or challenges raised by the current and original authors about the replication attempt. None of these need to be long.</p>
+<p>I think one of the main reasons why this pipeline reproduction failed was due to a lack of detailed information on pipeline settings.</p>
+<p>One clear takeway from this replication attempt is that neuroimaging methods are more complicated than what is typically described in a manuscript. The methods quoted from the original paper are not sufficient to reproduce the analysis. I initially reviewed their original paper, and then I went to review other VBM papers that used SPM. I ultimately got the most help from consulting the SPM8 and SPM12 instruction manuals for VBM8 and CAT12, watching SPM vbm tutorials on Youtube, and using the SPM user forum.</p>
+<p>The majority of the pipeline is image (pre)-processing. This information, although vital to the analysis, is not very interesting to readers, so it makes sense that it gets left out in the final manuscripts. Unfortunately, this absence combined with the neuroimaging’s lack of processing standards, makes reproducibility a challenge in the field. Luckily, things like fMRIprep and the BIDS data standard are helping everyone get onto the processing standard. I think that this will help progress the field significantly.</p>
 </div>
 </div>
 </div>

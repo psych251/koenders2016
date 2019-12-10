@@ -131,19 +131,29 @@ I had to remove all statistical thresholds (no multiple comparisons corrections)
 
 Although I followed the data processing instructions as indicated, I am going through both pipelines again. I suspect there may have been a missed step in the initial segmentation because there are multiple parameters and smaller steps wrapped into a single batch process. Another possibility is that the statistical analysis may have been incorrectly entered.
 
-### **12/2/2019**
-I realized that I did not include the proper covariates in my analyses. In addition to total intracranial volume (TIV), the authors also included age and sex. Note, TIV is automatically adjusted for in VBM8, whereas in CAT12, it is estimated and then manually included in the design matrix. The inclusion of age and gender did not yield significant results though.
+### **12/2/2019 - Status Update**
 
-### **12/9/2019**
+While going through both pipelines for a second attempt, I realized that I did not use the proper covariates in the statistical analysis. The authors included age and sex as covariates, and total intracranial volume was automatically adjusted for in VBM8’s initial segmentation step. CAT12 required the user to manually calculate and include TIV measures into the design matrix. However, I could not reproduce the cerebellum finding after the inclusion of these covariates.
 
-As a check, I conducted the pipeline on the follow-up data using both pipelines. Neither the VBM8 or CAT12 versions yielded significant results (with FWE multiple comparisons corrections). I conducted a series of quality checks using CAT12. 
+The figures below show results from the reproduction. The significance thresholds are uncorrected for multiple comparisons in order to visualize the regions of grey matter volume change. Two brain figures and results tables are shown for both VBM8 and CAT12 pipelines. They represent the contrasts from the t-test: controls < users and controls > users. The red arrow indicates where the original cerebellar finding was located approximately. Although there were no significant clusters after FWE-correction, it is interesting that the two pipelines produced different clusters from the same data. 
 
 ### Confirmatory analysis
 
-In my pipeline reproduction analysis, the most significant finding observed in the CB group (users) less than HC group (ctrls) was:
+I could not reproduce the key statistic: pFWE = .035. The results with the lowest p-values in the CB group (users) greater than HC group (ctrls) contrast were:
 
-* VBM8: pFWE-corr = 0.351, cluster size = 311, x,y,z = -11,-42,-26
+ * VBM8: pFWE-corr = 0.351, cluster size = 311, x,y,z = -11,-42,-26
 * CAT12: pFWE-corr = 0.973, cluster size = 41, x,y,z = 0, -78, -20
+
+ ### **Exploratory Analyses**
+ 
+For further analysis, I administered the pipelines on the follow-up data. Neither the VBM8 nor CAT12 versions yielded significant results after FWE-corrections. See figures below:
+
+An additional exploratory analysis was run to examine sample homogeneity after segmentation and registration to a standard template. Violin plots below show the average correlation between a subject’s pre-processed data and all other subjects in the sample. Higher correlations indicate proper tissue segmentation and standardization to the DARTEL template, resulting in overall improved data quality.
+
+![VBM8 Mean Correlation Plot](../images/final_figs/vbm8_quality.png)
+![CAT12 Mean Correlation Plot](../images/final_figs/cat12_quality.png)
+
+The mean correlation analysis suggests both versions of the SPM VBM pipeline can produce high quality tissue segmentation and template registration maps. The VBM8 method resulted in two volumes with mean correlations over two standard deviations away from the group average; the CAT12 method had one. 
 
 
 ## Discussion
@@ -153,13 +163,13 @@ In my pipeline reproduction analysis, the most significant finding observed in t
 The authors originally reported the following significant finding: 
 "Our previously reported cross-sectional finding of a cluster with larger grey matter volume in
 the CB group compared to the HC group in the cerebellum [17] is still significant in the present
-sample at baseline (cluster size = 393, *pFWE = .035*, x,y,z = 26,-70,-20)." 
+sample at baseline (cluster size = 393, pFWE = .035, x,y,z = 26,-70,-20)." 
 
-I tried to replicate this cerebellum finding using two different pipelines: 1) the author's VBM8 processing pipeline used in SPM8, and 2) the newer CAT12 method used in SPM12. I was unsuccessful in replicating the baseline cerebellum grey matter volume difference result. 
+I tried to replicate this cerebellum finding using two different pipelines: 1) the author's VBM8 processing pipeline used in SPM8, and 2) the newer CAT12 method used in SPM12. I was unsuccessful in replicating the baseline cerebellum grey matter volume difference result.
 
 ### Commentary
 
-I think one of the main reasons why this pipeline reproduction failed was due to a lack of detailed information on pipeline settings. 
+*I think one of the main reasons why this pipeline reproduction failed was due to a lack of detailed information on pipeline settings.*
 
 One clear takeway from this replication attempt is that neuroimaging methods are more complicated than what is typically described in a manuscript. The methods quoted from the original paper are not sufficient to reproduce the analysis. I initially reviewed their original paper, and then I went to review other VBM papers that used SPM. I ultimately got the most help from consulting the SPM8 and SPM12 instruction manuals for VBM8 and CAT12, watching SPM vbm tutorials on Youtube, and using the SPM user forum. 
 
