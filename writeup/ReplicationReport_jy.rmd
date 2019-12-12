@@ -157,8 +157,8 @@ I conducted the full VBM processing pipeline on the follow-up data. Neither the 
 
 An additional exploratory analysis was run to examine sample homogeneity after segmentation and registration to a standard template. Violin plots below show the average correlation between a subject’s pre-processed data and all other subjects in the sample. Higher correlations indicate proper tissue segmentation and standardization to the DARTEL template, resulting in overall improved data quality.
 
-![VBM8 Mean Correlation Plot](../images/final_figs/vbm8_quality.png)
-![CAT12 Mean Correlation Plot](../images/final_figs/cat12_quality.png)
+![VBM8 Mean Correlation Plot](../images/final_figs/vbm8_quality_resize.png)
+![CAT12 Mean Correlation Plot](../images/final_figs/cat12_quality_resize.png)
 
 The mean correlation analysis suggests both versions of the SPM VBM pipeline can produce high quality tissue segmentation and also do a good job registering the segmentated data to the DARTEL standard template. The CAT12 pipeline slightly outperformed the VBM8 pipeline. The VBM8 method resulted in two volumes with mean correlations over two standard deviations away from the group average; the CAT12 method had one. 
 
@@ -176,6 +176,7 @@ I tried to replicate this cerebellum finding using two different pipelines: 1) t
 
 ### Commentary
 I think the main reason behind the failure to reproduce is that the Methods section of the manuscript lacked detailed information of specific values and settings. The paper provided an overview of the steps, but I still had to rely on external sources to carry out the analysis including: the SPM8 and SPM12 instruction manuals for VBM8 and CAT12, watching SPM vbm tutorials on Youtube, and using the SPM user forum.
+
 An important point brought up by this project is the difference between VBM8 and CAT12. Both pipelines conduct the same VBM steps, but CAT12 showed higher data quality and segmentation accuracy than the older VBM8. This finding has been shown by other groups using the two methods to study temporal lobe epilepsy brain segmentation^1^. Ultimately, this hinders the interpretation of the study’s results. This also highlights the importance of adopting pipeline standards across groups. Current attempts at this include the Brain Imaging Data Structure (BIDS) format and fMRIPrep, an automated pipeline adopted by many functional neuroimaging groups.
 
 *^1^Farokhian F, Beheshti I, Sone D, Matsuda H. Comparing CAT12 and VBM8 for Detecting Brain Morphological Abnormalities in Temporal Lobe Epilepsy. Front Neurol. 2017;8:428. Published 2017 Aug 24. doi:10.3389/fneur.2017.00428*
